@@ -1,0 +1,35 @@
+#!/bin/bash
+function banner {
+printf "\a
+_,_	   _,_,_    ,_,_,  _,_ _,_,   _,
+@@@	  @@@@@@   @@@@@@\ @@@ @@@@    @@@
+@@@	 @@@  @@@ @@@   @@ @@@ @@@@@   @@@
+@!@	 @!@  @!@ @!@ _,_  @!@ @!@!@!  @!@
+!@!      !@!  !@! !@! !@!! !@! !@! !@! !@!
+!!!	 !!!  !!! !!! @/!! !!! !!!  !!!!!!
+!!!_,_,_ !!!  !!! !!!   !! !@! !@!   !@!@!
+\!!@!@!/  @@!!@@  \@@@!!@/ @!@ @!@    @!@!
+! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! \n"
+
+}
+
+function login {
+clear
+banner
+tput cup 10 10
+printf "\e[37mUserName : \e[0m"
+read -s -n 4 user
+tput cup 11 10
+printf "\e[37mPassWord : \e[0m"
+read -s -n 4 pswd
+  if ! [[ $user == root || $pswd == root ]]; then
+      tput cup 12 4
+      printf "\a\e[31mInvalid UserName Or PassWord\n"
+      sleep 2 && bash log
+  else
+      sleep 1 && clear
+  fi
+}
+
+login
+
