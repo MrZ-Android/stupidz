@@ -1,0 +1,53 @@
+ #!/bin/bash
+
+function connect {
+wget -q --spider http://google.com
+if ! [ $? -eq 0 ]; then
+   printf "\a\e[31mNo Connection !\n\e[0m"
+   sleep 1 && exit
+fi
+}
+
+function pindah {
+if ! [ "$(pwd -LP)" -eq data/data/com.termux/files/home ]; then
+     cd ~/
+fi
+chmod 755 *
+mv start-stupidz $PREFIX/bin
+mv $HOME/stupidz $PREFIX/share
+}
+
+function install {
+printf "\n[+] Installing Ingredients...\n\n"
+	sleep 3
+        apt update && apt upgrade
+	apt clean && apt autoremove -y
+	apt install -f
+	apt update -y 
+        apt install -y php ruby python httrack
+	apt install nodejs -y
+	npm -g install bash-obfuscate
+	pip install mechanize requests
+	apt install -y openssh openssl
+	apt install python2 -y 
+	pip2 install mechanize requests
+	pip2 install --upgrade pip
+	pip install --upgrade pip
+	printf "\n\e[37m[\e[31m!\e[37m] dpkg Error Or Not ? (y/n) : "
+	read
+        if [[ $REPLY == y || $REPLY == Y ]]; then
+	   printf "\e[37m\n[\e[31m!\e[37m] Solving Error dpkg...\e[0m\n"
+           dpkg --configure -a && install
+        elif [[ $REPLY -eq n || $REPLY -eq N ]]; then
+	   rm -rf $HOME/stupidz/install
+           printf "[☆] Now, You Can Run With Command start-stupidz\n"
+	   cd ~/
+        fi
+}
+
+
+
+clear
+connect
+pindah
+install
