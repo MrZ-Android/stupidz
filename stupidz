@@ -1,0 +1,154 @@
+#!/bin/bash
+
+function banner {
+clear
+r="\e[31m"
+w="\e[37m"
+d="$(date)"
+printf "\a\n"
+printf "$r   ______   "$w"_____ __              _     ______\n"
+printf "$r  /$w ____ $r\ "$w"/ ___// /___  ______  (_)___/ /__  /\n"
+printf "$r /$w / __ '$r/ "$w"\__ \/ __/ / / / __ \/ / __  /  / /\n"
+printf "$r/$w / /_/ $w/ "$w"___/ / /_/ /_/ / /_/ / / /_/ /  / /___\n"
+printf "$r\ $w\__,_$w/ "$w"/____/\__/\__,_/ .___/_/\__,_/  /______/\n"
+printf "$r \____/                "$w"/ /\n"
+printf "		      /_/\n"
+printf "      $r+$w---=={ Author       : MrZ3R0\n"
+printf "   $r++$w---$r+$w==={ Tool's Name  : @stupidz\n"
+printf "      $r+$w---=={ Tool's Status: Developing\n"
+printf "   This Tool Started On $d\n"
+printf "____________________________________________________\n"
+}
+
+function command_help {
+banner
+printf "\n"
+printf "     help    : Display This Help\n"
+printf "     install : Install Any Tools\n"
+printf "     exit    : Logout From This Tool\n"
+printf "     use_tool: Use Any Tools In This Tool\n"
+printf "\n"
+printf "Back To Home, Press Enter ! "
+read ENTER
+banner && home
+}
+
+function command_install {
+banner
+printf "\n"
+printf "  01. Install sqlmap\n"
+printf "  02. Install recon-ng\n"
+printf "  03. Install lazysqlmap\n"
+printf "  04. Install Lazymux\n"
+printf "  05. Install psqli\n"
+printf "  06. Install zeeb-dorker\n"
+printf "  07. Install OSIF\n"
+printf "  08. Install cupp\n"
+printf "  09. Install IPGeolocation\n"
+printf "  10. Install Tool mrcakil\n"
+printf "  11. Install TUANB4DUT\n" 
+printf "  12. Install BAJINGANv6\n"
+printf "  13. Install termux-loginv2fx\n"
+printf "  14. Install shellphish\n"
+printf "  15. Install RED_HAWK\n"
+printf "  16. Install weeman\n"
+printf "  17. Install ngrok\n"
+printf "  18. Install Darkfb v1.7\n"
+printf "  19. Install Darkfb-Gold\n"
+printf "  20. Install facebash\n"
+printf "\n"
+read -p ">>>> "
+    case $REPLY in
+  1 | 01 )
+	  git clone --depth 1 https://github.com/sqlmapproject/sqlmap sqlmap-dev; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+  2 | 02 )
+	  git clone https://github.com/lanmaster53/recon-ng.git; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+  3 | 03 )
+	  git clone https://github.com/verluchie/termux-lazysqlmap; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+  4 | 04 )
+	  git clone https://github.com/Gameye98/Lazymux; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+  5 | 05 )
+	  git clone https://github.com/Agressiv1njector/psqli; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+  6 | 06 )
+	  git clone https://github.com/ardzz/zeeb-dorker; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+  7 | 07 )
+	  git clone https://github.com/Ciku370/OSIF; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+  8 | 08 )
+	  git clone https://github.com/Mebus/cupp; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+  9 | 09 )
+	  git clone https://github.com/maldevel/IPGeolocation; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+      10 )
+	  git clone https://github.com/Mrcakil/mrcakil; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+      11 )
+	  git clone https://github.com/TUANB4DUT/TOOLSINSTALLERv3; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+      12 )
+	  git clone https://github.com/DarknessCyberTeam/BAJINGANv6.git; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+      13 )
+	  git clone https://github.com/Harisgitama/termux-loginv2fx.git; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+      14 )
+	  git clone https://github.com/thelinuxchoice/shellphish.git; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+      15 )
+	  git clone https://github.com/Tuhinshubhra/RED_HAWK; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+      16 )
+	  git clone https://github.com/evait-security/weeman; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+      17 )
+	  wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+      18 )
+	  git clone https://github.com/storiku/Darkfb; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+      19 )
+	  git clone https://github.com/Z3R0K1NG/DarkGold.git; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+      20 )
+	  git clone https://github.com/th3unkn0n/facebash-termux; printf "\n$w[+] Press Enter To Install Again ! "; read ENTER; clear && command_install
+	;;
+       * )
+	  printf "$r\a\tCommand Not Found !\n"; sleep 2; clear; command_install
+esac
+}
+function home {
+printf "\n\n\n"
+read -p ">>>> "
+   if [ $REPLY == help ]; then
+	command_help
+   elif [ $REPLY == install ]; then
+	command_install
+   elif [ $REPLY == menu ]; then
+	command_menu
+   elif [ $REPLY == exit ]; then
+	sleep 1; printf "[$r!$w] Exiting From This Tool...\n\e[0m"; sleep 2; exit
+   elif [ $REPLY == use_tool ]; then
+	command_use_tool
+   else
+	printf "\a\e[31mCommand Not Found !\e[0m\n"
+	sleep 2 && clear && banner && home
+   fi
+}
+
+trap ctrl_c INT
+ctrl_c() {
+printf "\a\n$w[$r!$w] Ctrl+C Detected, Trying To Exit From \n    This Tool\n"
+sleep 3
+exit
+}
+
+bash $PREFIX/share/stupidz/.log
+banner
+home
